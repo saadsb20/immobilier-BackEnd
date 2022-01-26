@@ -22,10 +22,10 @@ import java.util.logging.Logger;
 @EnableFeignClients
 public class BackendApplication {
 
-//    private final static String PRIVATE_KEY = "7083338cf9169f5e58fbc45673244b975c0c4bb6fd16e80f9132d3ea091b1a83";
+//    private final static String PRIVATE_KEY = "dc56417ae7de55a9f33e15394f0515f8b128d5d619c76256f6e51fe1fa7c5279";
 //    private final static BigInteger GAS_LIMIT = BigInteger.valueOf(6721975L);
 //    private final static BigInteger GAS_PRICE = BigInteger.valueOf(20000000000L);
-    //private final static String CONTRACT_ADDRESS = "0x90edae36c31698a7d2160c31eef2ebdf920171b7";
+//    //private final static String CONTRACT_ADDRESS = "0x90edae36c31698a7d2160c31eef2ebdf920171b7";
 
 
     public static void main(String[] args) {
@@ -34,7 +34,7 @@ public class BackendApplication {
     }
 
     public BackendApplication() throws Exception {
-//        String node = "HTTP://127.0.0.1:7545";
+//        String node = "HTTP://0.0.0.0:7545";
 //        System.out.println("Connecting to Ethereum …");
 //        Web3j web3 = Web3j.build(new HttpService(node));
 //        System.out.println("Ethereum connected ");
@@ -55,8 +55,8 @@ public class BackendApplication {
     }
 
 
-//    private String deployContract(Web3j web3j, Credentials credentials) throws Exception {
-//        return
+//        private String deployContract(Web3j web3j, Credentials credentials) throws Exception {
+//        return ImmobillierContract.deploy(web3j, credentials, GAS_PRICE, GAS_LIMIT)
 //                .send()
 //                .getContractAddress();
 //    }

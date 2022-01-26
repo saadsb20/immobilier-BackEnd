@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.web3j.crypto.Credentials;
 import org.web3j.crypto.ECKeyPair;
 import org.web3j.protocol.Web3j;
@@ -23,11 +24,12 @@ import java.util.Date;
 import java.util.List;
 
 @Service
+@Transactional
 public class ImmobillierContractServiceImpl2 implements ImmobillierContractService {
-    private final static String PRIVATE_KEY = "7083338cf9169f5e58fbc45673244b975c0c4bb6fd16e80f9132d3ea091b1a83";
+    private final static String PRIVATE_KEY = "16aea201d9e8f46d1b54e4192ecfbfbeb03b2b1c806141a7126df224b72ab85e";
     private final static BigInteger GAS_LIMIT = BigInteger.valueOf(6721975L);
     private final static BigInteger GAS_PRICE = BigInteger.valueOf(20000000000L);
-    private final static String CONTRACT_ADDRESS = "0xf481a2389dde54287f6a34535a99fefceaa14a8e";
+    private final static String CONTRACT_ADDRESS = "0xebcd8c88caaa6e51c06ff365026a68dac3c4b2c8";
     private static final Logger log = LoggerFactory.getLogger(BackendApplication.class);
 
 
@@ -167,7 +169,7 @@ public class ImmobillierContractServiceImpl2 implements ImmobillierContractServi
                 new Date(),
                 StatusImmobilier.WAITING
                 );
-
+        System.out.println("saving .....------------------------------");
         Immobillier savedImmobillier= immobillierRepository.save(immobillier);
         System.out.println("-------------------"+savedImmobillier.getId()+"------------------");
         System.out.println("-------------------"+savedImmobillier.getOwnerAddress()+"------------------");
